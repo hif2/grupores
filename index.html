@@ -14,7 +14,7 @@
             --accent: #00d2ff;
             --dark: #050505;
             --card-bg: rgba(255, 255, 255, 0.05);
-            --glass: rgba(20, 20, 20, 0.8);
+            --glass: rgba(20, 20, 20, 0.9);
             --text-main: #ffffff;
             --text-dim: #b3b3b3;
         }
@@ -23,7 +23,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
@@ -35,165 +35,92 @@
 
         .bg-gradient {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
             z-index: -1;
         }
 
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.2rem 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            top: 0; width: 100%; padding: 1.2rem 8%;
+            display: flex; justify-content: space-between; align-items: center;
             background: var(--glass);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .logo-nav {
-            font-weight: 800;
-            font-size: 1.4rem;
+            font-weight: 800; font-size: 1.4rem;
             background: linear-gradient(to right, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-decoration: none;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
         header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 15%;
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center; padding: 0 10%;
         }
 
-        header h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
+        header h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; font-weight: 800; }
 
         .btn-main {
-            padding: 1.2rem 3rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: 0.4s;
-            display: inline-block;
+            padding: 1.2rem 3rem; background: var(--primary); color: white;
+            text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.4s;
         }
 
-        .btn-main:hover { transform: translateY(-5px); background: var(--accent); }
-
-        /* Ajuste de Imagens das Marcas */
         .marcas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem; margin-top: 4rem;
         }
 
         .marca-card {
-            background: var(--card-bg);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.4s;
-            text-align: center;
+            background: var(--card-bg); padding: 3rem 2rem; border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; text-align: center;
         }
 
         .marca-card img {
-            max-width: 150px;
-            height: 80px;
-            object-fit: contain; /* Garante que a logo não distorça */
-            margin-bottom: 1.5rem;
+            width: 100%; max-width: 180px; height: 100px;
+            object-fit: contain; margin-bottom: 1.5rem;
         }
 
-        /* Seção Fundador */
+        .about-text { font-size: 1.1rem; color: var(--text-dim); line-height: 1.8; text-align: justify; }
+
         .founder-wrapper {
             background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-            border-radius: 40px;
-            padding: 4rem;
-            display: flex;
-            gap: 5rem;
-            align-items: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 40px; padding: 4rem; display: flex; gap: 4rem;
+            align-items: center; border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .founder-img-container { flex: 1; position: relative; }
+        .founder-img-container { flex: 1; }
         .founder-img-container img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 30px;
-            z-index: 2;
-            position: relative;
+            width: 100%; border-radius: 30px; object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        /* Contato */
-        .contact-info {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
+        .founder-info { flex: 1.5; }
 
         .contact-item {
-            background: rgba(255,255,255,0.03);
-            padding: 15px 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
+            background: rgba(255,255,255,0.03); padding: 12px 20px;
+            border-radius: 12px; text-decoration: none; color: var(--text-main);
+            display: inline-flex; align-items: center; gap: 10px;
+            border: 1px solid rgba(255,255,255,0.1); margin-top: 10px; transition: 0.3s;
         }
+        .contact-item:hover { background: var(--primary); }
 
-        .contact-item:hover { background: var(--primary); border-color: var(--primary); }
+        footer { background: #000; padding: 4rem 10% 2rem; border-top: 1px solid #111; }
+        .footer-logo { max-width: 150px; margin-bottom: 1.5rem; }
 
-        footer {
-            background: #000;
-            padding: 6rem 10% 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .footer-logo { max-width: 180px; height: auto; margin-bottom: 2rem; }
-
-        section { padding: 120px 10%; }
+        section { padding: 100px 10%; }
         .tag { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1rem; display: block; }
-        h2 { font-size: 3rem; margin-bottom: 2rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
 
         @media (max-width: 968px) {
-            .founder-wrapper { flex-direction: column; padding: 2rem; }
+            .founder-wrapper { flex-direction: column; text-align: center; padding: 2rem; }
             .nav-links { display: none; }
         }
     </style>
@@ -207,52 +134,54 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#marcas">Marcas</a></li>
-            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
             <li><a href="#fundador">Fundador</a></li>
         </ul>
     </nav>
 
     <header id="home">
-        <span class="tag" data-aos="fade-down">Tecnologia & Estratégia</span>
-        <h1 data-aos="fade-up">Grupo R&S</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Onde grandes ideias se transformam em resultados reais.</p>
-        <div data-aos="zoom-in" data-aos-delay="200">
-            <a href="mailto:comercial@grupors.shop" class="btn-main">Entrar em Contato</a>
-        </div>
+        <span class="tag" data-aos="fade-down">Tecnologia · Estratégia · Resultados</span>
+        <h1 data-aos="fade-up">O Grupo R&S é um ecossistema de marcas.</h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="max-width: 800px; color: var(--text-dim); margin-bottom: 2rem;">Criado para desenvolver ideias, projetos e soluções nas áreas de comunicação, educação, tecnologia e formação intelectual. Atuamos de forma estratégica para gerar impacto real e valor a longo prazo.</p>
+        <a href="#marcas" class="btn-main" data-aos="zoom-in">Conheça nossas marcas</a>
     </header>
 
     <section id="marcas">
         <div class="section-title" data-aos="fade-right">
-            <span class="tag">Ecossistema</span>
+            <span class="tag">Portfólio</span>
             <h2>Nossas Marcas</h2>
         </div>
         
         <div class="marcas-grid">
             <div class="marca-card" data-aos="fade-up">
-                <img src="lonex.png" alt="BleckVout Logo">
-                <h3>BleckVout</h3>
-                <p>Tecnologia e Inovação</p>
+                <img src="lonx.png" alt="Nexarys Logo">
+                <h3>Nexarys</h3>
+                <p>Soluções estratégicas e inovação.</p>
             </div>
             <div class="marca-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="logoresnews.jpeg" alt="R&S News Logo">
                 <h3>R&S News</h3>
-                <p>Mídia e Informação Independente</p>
+                <p>Mídia e informação independente.</p>
             </div>
             <div class="marca-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="lonx.png" alt="Nexarys Logo">
-                <h3>Nexarys</h3>
-                <p>Estratégia e Soluções Digitais</p>
+                <img src="lonex.png" alt="BleckVout Logo">
+                <h3>BleckVout</h3>
+                <p>Tecnologia e futuro digital.</p>
             </div>
         </div>
     </section>
 
     <section id="sobre">
-        <div style="max-width: 800px;" data-aos="fade-up">
-            <span class="tag">Sobre o Grupo</span>
-            <h2>Construindo o amanhã.</h2>
-            <p style="color: var(--text-dim); line-height: 1.8; font-size: 1.1rem;">
-                Fundado oficialmente em 26 de dezembro de 2025, o Grupo R&S é um ecossistema focado em inovação, planejamento e impacto real. Cada marca possui um papel específico, mas todas compartilham a mesma base: pensamento crítico e compromisso com o futuro.
-            </p>
+        <div class="section-title" data-aos="fade-up">
+            <span class="tag">Institucional</span>
+            <h2>Sobre o Grupo R&S</h2>
+        </div>
+        <div class="about-text" data-aos="fade-up">
+            <p>O Grupo R&S é uma organização criada com o propósito de desenvolver soluções modernas, estratégicas e tecnológicas voltadas para o crescimento de empresas e projetos digitais. Fundado oficialmente em 26 de dezembro de 2025, o Grupo R&S nasceu a partir de uma visão clara: construir uma estrutura capaz de unir tecnologia, estratégia e inovação em um único ecossistema. Desde o início, o objetivo sempre foi criar algo que não apenas acompanhasse as mudanças do mundo digital, mas que também contribuísse para o avanço e desenvolvimento de novos projetos e oportunidades.</p>
+            <br>
+            <p>A criação do Grupo R&S representa o início de uma jornada voltada ao crescimento contínuo e à construção de soluções sólidas. O grupo foi idealizado com o propósito de atender às necessidades do mercado moderno, oferecendo serviços e soluções que ajudam empresas, marcas e projetos a se posicionarem de forma profissional e estratégica no ambiente digital. Cada etapa da construção do grupo foi pensada para formar uma estrutura capaz de crescer de forma sustentável, sempre com foco na inovação e na qualidade dos serviços oferecidos.</p>
+            <br>
+            <p>Um dos principais objetivos do Grupo R&S é impulsionar o crescimento de empresas e projetos por meio da tecnologia e da estratégia digital. O grupo acredita que o uso inteligente da tecnologia, aliado a um bom planejamento estratégico, é essencial para alcançar resultados consistentes e duradouros. O desenvolvimento de novas ideias, projetos e ferramentas faz parte da essência do grupo, que busca sempre evoluir e acompanhar as tendências do mercado digital.</p>
         </div>
     </section>
 
@@ -262,11 +191,15 @@
                 <img src="Caráter.jpeg" alt="Guilherme Rodrigues da Silva">
             </div>
             <div class="founder-info">
-                <span class="tag">Fundador</span>
+                <span class="tag">Liderança</span>
                 <h2>Guilherme Rodrigues da Silva</h2>
-                <p style="color: var(--text-dim); line-height: 1.6;">Liderando o Grupo R&S com disciplina e visão de longo prazo, Guilherme foca na construção de projetos sólidos que integrem aprendizado financeiro e eficiência operacional.</p>
-                
-                <div class="contact-info">
+                <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Fundador do Grupo R&S</p>
+                <div class="about-text" style="font-size: 1rem;">
+                    <p>Guilherme Rodrigues da Silva é o fundador do Grupo R&S, uma iniciativa voltada ao desenvolvimento de projetos, organização estratégica e construção de atividades financeiras e operacionais próprias. Desde cedo, demonstrou interesse por organização, planejamento e criação de estruturas sólidas, buscando transformar ideias em projetos reais e funcionais.</p>
+                    <br>
+                    <p>Com visão voltada ao crescimento contínuo, iniciou o Grupo R&S com o objetivo de desenvolver experiências práticas, aprendizado financeiro e criação de iniciativas próprias com responsabilidade e disciplina. Sob sua liderança, o Grupo R&S tem como princípio a organização, o compromisso com o aprendizado e o desenvolvimento gradual de atividades que contribuam para a formação de uma base sólida para o futuro. Como fundador, Guilherme mantém foco na construção responsável de projetos, valorizando planejamento, registro formal das atividades e crescimento progressivo ao longo do tempo.</p>
+                </div>
+                <div style="margin-top: 2rem;">
                     <a href="mailto:comercial@grupors.shop" class="contact-item">
                         <i class="fas fa-envelope"></i> comercial@grupors.shop
                     </a>
@@ -280,17 +213,17 @@
 
     <footer>
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
-            <div class="footer-left">
-                <img src="logodogrupo.png" class="footer-logo" alt="Grupo R&S Logo">
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Sempre inovando para as próximas gerações.</p>
+            <div>
+                <img src="logodogrupo.png" class="footer-logo" alt="Logo Grupo R&S">
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Transformando ideias em soluções reais e eficientes.</p>
             </div>
-            <div class="footer-right" style="text-align: right;">
-                <p style="margin-bottom: 5px;">📞 43 996363109</p>
+            <div style="text-align: right; color: var(--text-dim); font-size: 0.9rem;">
+                <p>📞 43 99636-3109</p>
                 <p>📧 comercial@grupors.shop</p>
             </div>
         </div>
-        <div style="margin-top: 3rem; text-align: center; color: #333; font-size: 0.75rem; border-top: 1px solid #111; padding-top: 2rem;">
-            &copy; 2026 GRUPO R&S. TODOS OS DIREITOS RESERVADOS.
+        <div style="margin-top: 3rem; text-align: center; color: #333; font-size: 0.8rem; border-top: 1px solid #111; padding-top: 2rem;">
+            &copy; 2026 GRUPO R&S. TODOS OS DIREITOS RESERVADOS. FUNDADO EM 26/12/2025.
         </div>
     </footer>
 
